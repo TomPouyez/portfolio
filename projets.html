@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc9c; width: 0%; z-index: 10000;"></div>
+  <header>
+    <h1>Mes Projets</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <a href="competences.html">Compétences</a>
+      <a href="apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Quelques projets que j'ai réalisés</h2>
+    <p>Voici un aperçu de projets personnels ou scolaires, alliant HTML/CSS, JavaScript et autres technologies.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Projet Photo de Banc de test Avionique</h3>
+        <p>Conception d’un site avec de la gestion de bases de données pour afficher les photos d'un banc de test avionique</p>
+        <a href="#" class="btn">Voir le projet</a>
+      </div>
+
+      <div class="card">
+        <h3>Trophées NSI</h3>
+        <p>Code pygame de plusieurs mini-jeux sur le thème du sport ainsi que la gestion d'une base de données</p>
+        <a href="#" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card">
+        <h3>Pendu Football</h3>
+        <p>Jeu de pendu sur les clubs de football réalisé avec pygame</p>
+        <a href="#" class="btn">Voir le projet</a>
+      </div>
+
+      <!-- Tu peux dupliquer ce bloc pour d'autres projets -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 POUYEZ Tom</p>
+  </footer>
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc9c; width: 0%; z-index: 10000;"></div>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <a href="competences.html">Compétences</a>
+      <a href="apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <!-- Bannière montagne -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Gravir les sommets du code</h2>
+      <p>Chaque ligne de code est un pas de plus vers le sommet. Passionné par le développement web et les réseaux, je trace ma voie avec rigueur et créativité.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2>Bienvenue !</h2>
+    <p>Je suis étudiant en Réseaux & Télécoms, curieux, motivé, et toujours prêt à explorer de nouveaux horizons numériques.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 POUYEZ Tom</p>
+  </footer>
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>À propos - Ton Nom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc9c; width: 0%; z-index: 10000;"></div>
+  <header>
+    <h1>À propos de moi</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <a href="competences.html">Compétences</a>
+      <a href="apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <p>Je m'appelle Ton Nom, je suis étudiant en BUT Réseaux et Télécoms. J'aime découvrir les technologies web, coder des projets perso et apprendre le pentest.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 POUYEZ Tom</p>
+  </footer>
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
