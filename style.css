@@ -339,3 +339,19 @@ footer {
   from, to { border-color: transparent }
   50% { border-color: white; }
 }
+
+
+.cv-download {
+  position: absolute;
+  right: 20px; /* Ajuste si nécessaire */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+}
+
