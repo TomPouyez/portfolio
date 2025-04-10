@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
-  <title>Projet : Pendu Football</title>
+  <title>Pendu Football</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div id="scroll-progress"></div>
 
   <header>
-    <h1>Projet : Pendu Football</h1>
+    <h1>Pendu Football</h1>
     <nav>
       <a href="../index.html">Accueil</a>
       <a href="../projets.html">Projets</a>
@@ -17,20 +18,10 @@
       <a href="../apropos.html">À propos</a>
     </nav>
   </header>
-
-  <!-- Hero Section avec Parallax Spécifique à la page -->
-  <section class="hero-pendu">
-    <div class="hero-content">
-      <h1>Pendu Football</h1>
-      <p>Un jeu de pendu sur les clubs de football réalisés avec Pygame.</p>
-    </div>
-  </section>
-
-  <!-- Présentation du Projet -->
   <main class="container projet-page fade-in-delay">
     <section class="project-section">
       <div class="project-description slide-in-left">
-        <h2>Jeu de Pendu sur le Football</h2>
+        <h2>Pendu Football</h2>
         <p>Ce projet est un jeu de pendu réalisé avec Pygame sur le thème des clubs de football. Le but du jeu est de deviner le nom du club en un nombre limité d’essais. Le joueur interagit avec une interface visuelle animée et reçoit un retour immédiat sur ses choix.</p>
         <p>Ce projet m’a permis de consolider mes compétences en programmation Python, gestion des événements, et interface utilisateur avec Pygame.</p>
       </div>
@@ -54,7 +45,7 @@
     window.addEventListener("scroll", function () {
       const hero = document.querySelector('.hero-pendu');
       if (hero) {
-        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px'; // Effet Parallax uniquement pour cette section
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
       }
     });
   </script>
