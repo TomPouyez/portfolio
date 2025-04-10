@@ -137,7 +137,6 @@ p {
 }
 
 .card a:hover {
-  color: #1abc9c;
   transform: scale(1.05);
 }
 
@@ -151,7 +150,7 @@ p {
   font-weight: 600;
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  animation: pulse 2s infinite;
+
 }
 
 .card .btn:hover {
@@ -355,3 +354,12 @@ footer {
   animation: pulse 2s infinite;
 }
 
+footer a {
+  color: #0A66C2; /* Couleur LinkedIn */
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
