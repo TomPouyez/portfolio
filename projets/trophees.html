@@ -25,11 +25,17 @@
         <p>Ce projet est un jeu de pendu réalisé avec Pygame sur le thème des clubs de football. Le but du jeu est de deviner le nom du club en un nombre limité d’essais. Le joueur interagit avec une interface visuelle animée et reçoit un retour immédiat sur ses choix.</p>
         <p>Ce projet m’a permis de consolider mes compétences en programmation Python, gestion des événements, et interface utilisateur avec Pygame.</p>
       </div>
-
-      <div class="project-image-container slide-in-right">
-        <img src="images/pendu.png" alt="Jeu du pendu football" class="project-img">
-      </div>
     </section>
+    <a href="" target="_blank">Lien vers le code</a>
+    <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/1vruAi6gE8M" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
   </main>
 
   <footer style="text-align: center;">
@@ -38,6 +44,9 @@
       <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
         <i class="fab fa-linkedin"></i>
       </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+    </a>
     </p>
   </footer>
 
@@ -45,7 +54,7 @@
     window.addEventListener("scroll", function () {
       const hero = document.querySelector('.hero-pendu');
       if (hero) {
-        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px'; // Effet Parallax uniquement pour cette section
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px'; 
       }
     });
   </script>
