@@ -10,7 +10,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f0f2f5;
-  color: #333;
+  color: #3f3f3f;
   line-height: 1.6;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -263,7 +263,7 @@ a:hover {
 
 /* Footer */
 footer {
-  background-color: #2c3e50;
+  background-color: #304253;
   color: white;
   text-align: center;
   padding: 20px 0;
