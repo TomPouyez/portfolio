@@ -64,7 +64,7 @@ nav a::after {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #1abc9c;
+  background-color: #9ec21c;
   left: 0;
   bottom: -5px;
   transform: scaleX(0);
@@ -73,7 +73,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: #1abc9c;
+  color: #a4c70a;
 }
 
 nav a:hover::after {
@@ -196,10 +196,6 @@ ul li::before {
 a {
   color: #3498db;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Hero avec parallax */
