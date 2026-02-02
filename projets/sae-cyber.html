@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Projet : Infrastructure Réseau Sécurisée (SAÉ)</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>SAÉ : Architecture Réseau</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Conception et Sécurisation d'une Infrastructure Critique</h2>
+        <p>Ce projet d'envergure, structuré sur plusieurs mois, consistait à concevoir, simuler puis déployer une infrastructure réseau complète et résiliente.</p>
+        
+        <p>La première phase a porté sur l'étude et la simulation via Packet Tracer. J'ai mis en place une architecture redondante au niveau local avec les protocoles STP et RSTP, ainsi qu'au niveau routage via HSRP pour garantir une haute disponibilité des services.</p>
+        
+        <p>La dimension cybersécurité a été le cœur du projet avec l'implémentation de tunnels VPN IPsec et SSL pour l'interconnexion sécurisée des sites. J'ai également configuré des politiques de filtrage strictes via des listes de contrôle d'accès (ACL) et la mise en place de zones de démilitarisation (DMZ) pour protéger les serveurs critiques.</p>
+        
+        <p>Le projet s'est conclu par une phase de production sur équipements réels, incluant le déploiement du routage dynamique OSPF, la configuration du NAT et des tests de robustesse pour valider la conformité de l'installation face aux exigences du cahier des charges.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

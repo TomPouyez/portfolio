@@ -3,13 +3,14 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
-  <title>Accueil</title>
+  <title>Accueil - Tom Pouyez</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc86; width: 0%; z-index: 10000;"></div>
+  
   <header>
     <nav>
       <a href="index.html">Accueil</a>
@@ -18,20 +19,24 @@
       <a href="apropos.html">À propos</a>
       <a href="TOM_POUYEZ_CV.pdf" id="cvDownloadButton" class="cv-download" download="BUT_2_RT-POUYEZ-CV.pdf">Télécharger mon CV</a>
     </nav>
-
   </header>
 
-  <!-- Bannière montagne -->
   <section class="hero">
     <div class="hero-content">
+      <h1 style="font-size: 4em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">TOM POUYEZ</h1>
       <h2>Gravir les sommets de l'informatique</h2>
-      <p>Chaque ligne de code est un pas de plus vers le sommet.</br> Je suis passionné par la cybersécurité et les réseaux.</p>
+      <p>Chaque ligne de code est un pas de plus vers le sommet.<br> Passionné par la cybersécurité offensive et les infrastructures réseaux.</p>
     </div>
   </section>
 
   <main class="container">
-    <h2>Bienvenue sur mon site WEB!</h2>
-    <p>Je m'appelle Tom et je suis étudiant en deuxième année du BUT Réseaux et Télécommunications, ce que j'aime par dessus tout, c'est l'aspect offensive de la cybersécurité.</p>
+    <h2>Bienvenue sur mon portfolio !</h2>
+    
+    <div style="text-align: justify; line-height: 1.6;">
+      <p>Étudiant en deuxième année de BUT Réseaux et Télécommunications, je me spécialise dans la sécurisation des infrastructures et les tests d'intrusion. Ce qui me passionne avant tout, c'est l'aspect offensif de la cybersécurité : comprendre les vulnérabilités pour mieux s'en défendre.</p>
+      
+      <p>Au-delà de mon cursus académique, je développe mes compétences techniques de manière autodidacte sur la plateforme <strong>TryHackMe</strong> (profil : <a href="https://tryhackme.com/p/hapist3" target="_blank" rel="noopener noreferrer" style="color: #1abc86; text-decoration: none; font-weight: bold;">hapist3</a>). J'y travaille quotidiennement sur l'énumération de réseaux, l'exploitation de failles système et l'analyse de protocoles.</p>
+    </div>
   </main>
 
   <footer style="text-align: center;">
@@ -45,14 +50,20 @@
     </a>
     </p>
   </footer>
+
   <script>
     window.addEventListener("scroll", function () {
       const hero = document.querySelector('.hero');
       if (hero) {
         hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
       }
+      
+      // Mise à jour de la barre de progression
+      const scrollProgress = document.getElementById('scroll-progress');
+      const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / scrollTotal) * 100;
+      scrollProgress.style.width = scrolled + "%";
     });
-
   </script>
 </body>
 </html>

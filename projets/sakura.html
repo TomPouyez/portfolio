@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>OSINT : Sakura</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>Sakura</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Sakura</h2>
+        <p>Ce projet porte sur une investigation OSINT (Open Source Intelligence) complète afin de traquer un attaquant fictif à travers ses traces numériques.</p>
+        
+        <p>L'enquête a débuté par l'analyse des métadonnées d'une image pour identifier un pseudonyme. En utilisant des outils comme Sherlock ou l'extension de recherche sur les réseaux sociaux, j'ai pu lier ce pseudo à des comptes GitHub et Twitter (X).</p>
+        
+        <p>L'investigation s'est poursuivie par l'exploration des dépôts Git pour retrouver des clés SSH et des adresses e-mail masquées. L'utilisation de Google Dorking et de sites de géolocalisation a permis de confirmer l'emplacement physique de la cible grâce à des photos de paysages.</p>
+        
+        <p>Enfin, l'analyse des portefeuilles de cryptomonnaies via des explorateurs de blockchain a permis de retracer les transactions finales et de boucler l'enquête en identifiant l'attaquant.</p>
+      </div>
+    </section>
+    
+    <a href="https://tryhackme.com/room/sakurarooms" target="_blank" class="btn-link">Lien vers la machine</a>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

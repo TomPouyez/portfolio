@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Pentest : RootMe</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>RootMe</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>RootMe</h2>
+        <p>Ce challenge consiste en une intrusion via une vulnérabilité d'upload de fichier et une élévation de privilèges Linux.</p>
+        
+        <p>Le projet a débuté par une phase de reconnaissance avec NMAP, identifiant un serveur Apache sur le port 80. L'utilisation de GoBuster a révélé deux répertoires critiques : /panel/ pour l'upload de fichiers et /uploads/ pour leur exécution.</p>
+        
+        <p>L'exploitation a consisté à contourner les restrictions d'upload en modifiant l'extension d'un reverse shell PHP (passage de .php à .phtml). Une fois le shell exécuté, j'ai obtenu un accès initial sur la machine, me permettant de récupérer le premier flag utilisateur.</p>
+        
+        <p>Pour l'escalade de privilèges, j'ai recherché les fichiers possédant le bit SUID. L'exécutable Python a été identifié comme vulnérable. En utilisant une commande spécifique trouvée sur GTFOBins, j'ai pu contourner les restrictions locales pour obtenir un shell root et valider la machine.</p>
+      </div>
+    </section>
+    
+    <a href="https://tryhackme.com/room/r00tme" target="_blank" class="btn-link">Lien vers la machine</a>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

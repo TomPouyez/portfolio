@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Projet : Applications Communicantes et Cybersécurité</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>SAÉ : Applications Communicantes</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Développement d'un Écosystème de Surveillance Réseau</h2>
+        <p>Ce projet consistait à concevoir une suite logicielle interconnectée permettant la détection, le stockage et la visualisation des failles de sécurité sur un réseau local.</p>
+        
+        <p>Le cœur du système repose sur une application Java développée pour scanner le réseau, identifier les vulnérabilités actives et automatiser leur enregistrement au sein d'une base de données centralisée. Cette étape a nécessité la mise en place d'une logique d'automatisation des outils de diagnostic réseau.</p>
+        
+        <p>L'interface de consultation se décline sur deux supports. D'une part, un site web dynamique interroge la base de données pour présenter les rapports de sécurité. D'autre part, une application Android native, développée en Java, permet de visualiser ces mêmes alertes en temps réel.</p>
+        
+        <p>L'aspect critique du projet portait sur la communication entre ces différentes briques. L'échange de données entre le serveur web et l'application mobile a été réalisé via des API au format JSON, garantissant une interopérabilité fluide et efficace entre les plateformes fixe et mobile.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Pentest : Pivoting et Segmentation</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>Pivoting Réseau</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Pivoting et Mouvements Latéraux</h2>
+        <p>Ce projet réalisé en environnement de laboratoire porte sur l'audit d'une infrastructure segmentée et l'exploitation d'une machine pivot pour atteindre des réseaux isolés.</p>
+        
+        <p>L'architecture était composée de deux segments réseau distincts : un segment frontal accessible et un segment interne sécurisé. La première étape a consisté à compromettre un serveur Samba situé à l'intersection des deux réseaux pour l'utiliser comme point d'appui.</p>
+        
+        <p>Pour franchir la barrière réseau, j'ai mis en place un tunnel SSH dynamique créant un serveur proxy SOCKS local. En configurant l'outil Proxychains, j'ai pu rediriger le flux de mes outils de scan et de mon navigateur vers le segment interne, rendant les cibles cachées visibles depuis ma machine d'attaque.</p>
+        
+        <p>L'étape finale a impliqué l'utilisation de Socat pour rediriger les flux de données et obtenir un reverse shell depuis une application web vulnérable située sur le segment protégé. Ce projet a démontré l'importance d'une segmentation réseau stricte et du filtrage des flux entre les zones de confiance.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

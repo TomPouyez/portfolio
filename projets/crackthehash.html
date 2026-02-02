@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Pentest : Crack the Hash</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>Crack the Hash</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Crack the Hash</h2>
+        <p>Ce projet porte sur l'identification et le cassage de divers types de hashs cryptographiques rencontrés lors de tests d'intrusion.</p>
+        
+        <p>L'exercice a consisté à identifier dans un premier temps la nature des algorithmes utilisés (MD5, SHA-1, SHA-256, ou encore des formats plus complexes comme bcrypt) en utilisant des outils comme Hash-Identifier ou des services en ligne spécialisés.</p>
+
+        
+        
+        <p>Pour le cassage effectif, j'ai utilisé John the Ripper et Hashcat. J'ai dû manipuler différentes wordlists, notamment la célèbre Rockyou.txt, et appliquer des règles de mutation pour trouver les mots de passe correspondant aux empreintes les plus robustes.</p>
+        
+        <p>L'une des étapes clés a été de comprendre l'utilisation du salage (salt) dans certains hashs et de configurer correctement les modes de Hashcat pour traiter des formats spécifiques comme le SHA-512 ou le MD5 crypté sous Linux.</p>
+      </div>
+    </section>
+    
+    <a href="https://tryhackme.com/room/crackthehash" target="_blank" class="btn-link">Lien vers la machine</a>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

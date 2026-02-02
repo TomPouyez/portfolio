@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Pentest : Basic Pentesting</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <header>
+    <h1>Basic Pentesting</h1>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="../projets.html">Projets</a>
+      <a href="../competences.html">Compétences</a>
+      <a href="../apropos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="container projet-page fade-in-delay">
+    <section class="project-section">
+      <div class="project-description slide-in-left">
+        <h2>Basic Pentesting</h2>
+        <p>Ce projet retrace l'exploitation de la machine "Basic Pentesting", une introduction aux vulnérabilités réseau courantes.</p>
+        
+        <p>L'aventure commence par un scan NMAP révélant plusieurs services ouverts, notamment HTTP (port 80) et SMB (ports 139/445). L'énumération des répertoires Web avec GoBuster a permis de découvrir un dossier caché menant à des informations sur le personnel.</p>
+        
+        <p>Parallèlement, l'énumération SMB via Enum4linux a confirmé l'existence de deux utilisateurs : <em>Jan</em> et <em>Kay</em>. En utilisant Hydra sur le service SSH, j'ai pu casser le mot de passe de Jan, qui utilisait une variante de "password" très faible.</p>
+        
+        <p>Enfin, l'étape de Privilege Escalation a consisté à inspecter le dossier personnel de Kay. En récupérant sa clé privée SSH chiffrée (.id_rsa), j'ai utilisé John the Ripper avec le script ssh2john pour cracker la passphrase, me permettant de passer Root et de terminer la machine.</p>
+      </div>
+    </section>
+    
+    <a href="https://tryhackme.com/room/basicpentestingjt" target="_blank" class="btn-link">Lien vers la machine</a>
+  </main>
+
+  <footer style="text-align: center;">
+    <p style="display: inline-flex; align-items: center; gap: 10px;">
+      &copy; 2025 Pouyez Tom
+      <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
+        <i class="fab fa-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const hero = document.querySelector('.hero-pendu');
+      if (hero) {
+        hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
