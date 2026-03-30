@@ -64,7 +64,7 @@ nav a::after {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #9ec21c;
+  background-color: #e2f107;
   left: 0;
   bottom: -5px;
   transform: scaleX(0);
@@ -73,7 +73,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: #a4c70a;
+  color: #e2f107;
 }
 
 nav a:hover::after {
@@ -123,7 +123,7 @@ p {
 }
 
 .card h3 {
-  color: #3498db;
+  color: #2c3e50;
   margin-bottom: 10px;
 }
 
@@ -131,7 +131,7 @@ p {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  color: #2980b9;
+  color: #c6d30c;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -145,7 +145,7 @@ p {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 15px;
-  background-color: #3498db;
+  background-color: #c6d30c;
   color: white;
   font-weight: 600;
   border-radius: 6px;
@@ -154,7 +154,7 @@ p {
 }
 
 .card .btn:hover {
-  background-color: #1abc9c;
+  background-color: #c6d30c;
   transform: translateY(-3px) scale(1.05);
 }
 
@@ -179,7 +179,7 @@ ul li {
 ul li:hover {
   transform: translateX(12px) rotateZ(-0.5deg);
   background: #eaf6fb;
-  box-shadow: 0 0 10px #1abc9c, 0 0 20px #1abc9c88;
+  box-shadow: 0 0 10px #c6d30c, 0 0 20px #c6d30c;
 }
 
 ul li::before {
@@ -188,7 +188,7 @@ ul li::before {
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #1abc9c;
+  color: #c6d30c;
   font-weight: bold;
 }
 

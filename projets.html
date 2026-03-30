@@ -5,9 +5,91 @@
   <meta charset="UTF-8">
   <title>Projets</title>
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Système de filtres */
+    .filter-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background-color: #f4f6f8;
+      border: 2px solid #c6d30c;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background-color: #c6d30c;
+      color: white;
+    }
+
+    /* Grille des projets */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* Classe ajoutée par Javascript pour cacher les éléments non filtrés */
+    .card.hide {
+      display: none;
+    }
+
+    .card h3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4em;
+      height: 2.8em; 
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .card .btn {
+      margin-top: auto;
+      text-align: center;
+      display: inline-block;
+    }
+    
+    /* Petits badges de catégories sur les cartes */
+    .category-badge {
+      display: inline-block;
+      font-size: 0.8em;
+      background: #eee;
+      color: #555;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+  </style>
 </head>
 <body>
   <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc9c; width: 0%; z-index: 10000;"></div>
+  
   <header>
     <h1>Mes Projets</h1>
     <nav>
@@ -19,91 +101,148 @@
   </header>
 
   <main class="container">
-    <h3>Découvrez ici une sélection des projets techniques et académiques que j'ai réalisés, illustrant mes compétences en cybersécurité, réseaux et télécommunications.</h3></br></br></br></br></br>
+    <h3>Découvrez ici une sélection des projets techniques et académiques que j'ai réalisés, illustrant mes compétences en cybersécurité, réseaux et télécommunications.</h3><br>
+    
+    <div class="filter-menu">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="cyber">Cybersécurité</button>
+      <button class="filter-btn" data-filter="reseaux">Réseaux & Télécoms</button>
+      <button class="filter-btn" data-filter="prog">Programmation</button>
+    </div>
+
     <div class="grid">
-      <div class="card">
+      <div class="card" data-category="prog">
+        <span class="category-badge">Programmation</span>
         <h3>Projet Photo de Banc de test Avionique</h3>
-        <p>Conception d’un site avec de la gestion de bases de données pour afficher les photos d'un banc de test avionique</p>
+        <p>Conception d’un site avec de la gestion de bases de données pour afficher les photos d'un banc de test avionique.</p>
         <a href="./projets/thales.html" class="btn">Voir le projet</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="prog">
+        <span class="category-badge">Programmation</span>
         <h3>Trophées NSI</h3>
-        <p>Code pygame de plusieurs mini-jeux sur le thème du sport ainsi que la gestion d'une base de données</p>
+        <p>Code pygame de plusieurs mini-jeux sur le thème du sport ainsi que la gestion d'une base de données.</p>
         <a href="./projets/trophees.html" class="btn">Voir le projet</a>
       </div>
       
-      <div class="card">
+      <div class="card" data-category="prog">
+        <span class="category-badge">Programmation</span>
         <h3>Pendu Football</h3>
-        <p>Jeu de pendu sur le thème des clubs de football réalisé avec pygame</p>
+        <p>Jeu de pendu sur le thème des clubs de football réalisé avec pygame.</p>
         <a href="./projets/pendu.html" class="btn">Voir le projet</a>
       </div>
-      <div class="card">
-        <h3>Pentest : Brooklyn Nine-Nine</h3>
-        <p>Réalisation d'un pentest de niveau simple sur la plateforme TRYHACKME</p>
-        <a href="./projets/brooklyn.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>Pentest : Basic Pentesting</h3>
-        <p>Exploitation d'une machine Linux via énumération de services, bruteforce SSH et cassage de clé privée (John the Ripper).</p>
-        <a href="./projets/basic.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>OSINT : Sakura</h3>
-        <p>Investigation numérique complète : analyse de métadonnées, traçage de réseaux sociaux et analyse de transactions cryptomonnaies.</p>
-        <a href="./projets/sakura.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>Pentest : RootMe</h3>
-        <p>Exploitation d'une faille d'upload (File Upload Bypass) et élévation de privilèges via des droits SUID sur Python.</p>
-        <a href="./projets/rootme.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>Pentest : Crack the Hash</h3>
-        <p>Identification et cassage de hashs cryptographiques (MD5, SHA, Bcrypt) via John the Ripper, Hashcat et analyse de dictionnaires.</p>
-        <a href="./projets/crackthehash.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>Pentest : Pivoting Réseau</h3>
-        <p>Exploitation d'une infrastructure segmentée via tunnel SSH, Proxychains et Socat pour compromettre des réseaux internes isolés.</p>
-        <a href="./projets/pivoting.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
-        <h3>Création d'un réseau d'entreprise sur équipements réels</h3>
-        <p>Déploiement d'une infrastructure redondante (HSRP, RSTP) sécurisée par VPN IPsec/SSL, ACLs et segmentation DMZ sur équipements réels.</p>
-        <a href="./projets/sae-cyber.html" class="btn">Voir le projet</a>
-      </div>
-      <div class="card">
+
+      <div class="card" data-category="prog">
+        <span class="category-badge">Programmation</span>
         <h3>SAÉ : Applications Communicantes</h3>
         <p>Développement d'un scanner de failles en Java, d'une base de données et d'une application Android synchronisée par API JSON.</p>
         <a href="./projets/prog.html" class="btn">Voir le projet</a>
       </div>
-      <div class="card">
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>Pentest : Brooklyn Nine-Nine</h3>
+        <p>Réalisation d'un pentest de niveau simple sur la plateforme TRYHACKME.</p>
+        <a href="./projets/brooklyn.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>Pentest : Basic Pentesting</h3>
+        <p>Exploitation d'une machine Linux via énumération de services, bruteforce SSH et cassage de clé privée.</p>
+        <a href="./projets/basic.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>OSINT : Sakura</h3>
+        <p>Investigation numérique complète : analyse de métadonnées, traçage de réseaux sociaux et analyse cryptomonnaies.</p>
+        <a href="./projets/sakura.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>Pentest : RootMe</h3>
+        <p>Exploitation d'une faille d'upload (File Upload Bypass) et élévation de privilèges via des droits SUID sur Python.</p>
+        <a href="./projets/rootme.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>Pentest : Crack the Hash</h3>
+        <p>Identification et cassage de hashs cryptographiques (MD5, SHA, Bcrypt) via John the Ripper, Hashcat.</p>
+        <a href="./projets/crackthehash.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="cyber">
+        <span class="category-badge">Cybersécurité</span>
+        <h3>Pentest : Pivoting Réseau</h3>
+        <p>Exploitation d'une infrastructure segmentée via tunnel SSH, Proxychains et Socat pour compromettre des réseaux isolés.</p>
+        <a href="./projets/pivoting.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="reseaux">
+        <span class="category-badge">Réseaux</span>
+        <h3>Création d'un réseau d'entreprise sur équipements réels</h3>
+        <p>Déploiement d'une infrastructure redondante (HSRP, RSTP) sécurisée par VPN IPsec/SSL, ACLs et segmentation DMZ.</p>
+        <a href="./projets/sae-cyber.html" class="btn">Voir le projet</a>
+      </div>
+      
+      <div class="card" data-category="reseaux">
+        <span class="category-badge">Télécoms</span>
         <h3>SAÉ : Transmission de Données (Télécoms)</h3>
-        <p>Analyse de signaux numériques DVB-S/T : mesures de BER, MER, analyse de spectre et interprétation de diagrammes de constellation.</p>
+        <p>Analyse de signaux numériques DVB-S/T : mesures de BER, MER, analyse de spectre et diagrammes de constellation.</p>
         <a href="./projets/telecom.html" class="btn">Voir le projet</a>
       </div>
     </div>
-    
   </main>
 
-  <footer style="text-align: center;">
+  <footer style="text-align: center; margin-top: 40px;">
     <p style="display: inline-flex; align-items: center; gap: 10px;">
-      &copy; 2025 Pouyez Tom
+      &copy; 2026 Pouyez Tom
       <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
         <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
         <i class="fab fa-github"></i>
-    </a>
+      </a>
     </p>
   </footer>
+  
   <script>
+    // --- 1. Animation du background et barre de progression ---
     window.addEventListener("scroll", function () {
       const hero = document.querySelector('.hero');
       if (hero) {
         hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
       }
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress").style.width = scrolled + "%";
+    });
+
+    // --- 2. Système de filtrage des projets ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Retirer la classe active de tous les boutons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Ajouter la classe active au bouton cliqué
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.classList.remove('hide');
+          } else {
+            card.classList.add('hide');
+          }
+        });
+      });
     });
   </script>
 </body>

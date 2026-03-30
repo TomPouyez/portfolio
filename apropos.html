@@ -5,9 +5,79 @@
   <meta charset="UTF-8">
   <title>À propos</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .about-card {
+      background: #f4f6f8;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin-top: 20px;
+    }
+
+    .about-card p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .about-card ul {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    .about-card li {
+      margin-bottom: 10px;
+    }
+
+    /* Style pour la conclusion (clôture) */
+    .closing-section {
+      border-top: 2px solid #c6d30c;
+      padding-top: 20px;
+      margin-top: 30px;
+    }
+
+    .closing-section h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-contact {
+      background-color: #34495e;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: #c6d30c;
+    }
+
+    .btn-thm {
+      background-color: #111; /* Couleur sombre pour TryHackMe */
+    }
+
+    .btn-thm:hover {
+      background-color: #c6d30c;
+    }
+  </style>
 </head>
 <body>
   <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 5px; background: #1abc9c; width: 0%; z-index: 10000;"></div>
+  
   <header>
     <h1>À propos de moi</h1>
     <nav>
@@ -19,37 +89,54 @@
   </header>
 
   <main class="container">
-  <h3>Je vous présente ici mon parcours, mes motivations et les objectifs professionnels qui animent ma passion pour l'informatique et la sécurité informatique.</h3></br></br></br></br></br>
-   <p style="text-align: justify;">Je m'appelle Tom, étudiant en BUT Réseaux et Télécoms. Passionné par l'informatique, je me spécialise dans l'administration des infrastructures réseaux et la mise en œuvre de solutions de cybersécurité.</br></br>
+    <div class="about-card">
+      <p>Étudiant en <strong>BUT Réseaux et Télécoms</strong>, je suis passionné par l'administration des infrastructures et la sécurité informatique. Ce portfolio documente ma progression technique et rassemble mes réalisations.</p>
+      
+      <p>Mon profil se construit autour de deux axes complémentaires :</p>
+      <ul>
+        <li><strong>Parcours académique :</strong> Déploiement d'équipements, segmentation réseau et sécurisation des flux en conditions réelles.</li>
+        <li><strong>Pratique autodidacte :</strong> Entraînement intensif en cybersécurité offensive sur TryHackMe (identification de vulnérabilités, vecteurs d'attaque et durcissement système).</li>
+      </ul>
 
-Au cours de mon cursus, j'ai participé à divers projets concrets me permettant de mobiliser des compétences en configuration d'équipements, en segmentation réseau et en sécurisation des flux. J'ai réalisé ce site afin de rassembler l'ensemble de mes projets et de documenter ma progression technique.</br></br>
+      <div class="closing-section">
+        <h3>Prêt pour de nouveaux défis</h3>
+        <p>Dans la perspective de l'obtention de mon diplôme en 2026, je suis déterminé à mettre mes compétences au service de projets concrets et à continuer d'évoluer dans les domaines de la cybersécurité et des réseaux. N'hésitez pas à me contacter ou à consulter mon profil en ligne.</p>
+        
 
-En parallèle de mes études, je développe mes compétences en cybersécurité de manière autodidacte. Je suis particulièrement actif sur la plateforme TryHackMe, où j'apprends à identifier des vulnérabilités, à comprendre les vecteurs d'attaque et à appliquer des mesures de durcissement sur différents systèmes.</br></br>
-
-N'hésitez pas à me contacter via mon LinkedIn ou mon adresse mail : tom.pouyez@etu.unice.fr.</br>
-
-Vous pouvez également suivre ma progression sur mon profil TryHackMe : 
-    <a href="https://tryhackme.com/p/hapist3" target="_blank" rel="noopener noreferrer">https://tryhackme.com/p/hapist3</a>
-</p>
+          <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" class="btn-contact">
+            <i class="fab fa-linkedin"></i> Mon LinkedIn
+          </a>
+          <a href="https://tryhackme.com/p/hapist3" target="_blank" class="btn-contact btn-thm">
+            <i class="fas fa-shield-alt"></i> Profil TryHackMe
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer style="text-align: center;">
+  <footer style="text-align: center; margin-top: 40px;">
     <p style="display: inline-flex; align-items: center; gap: 10px;">
-      &copy; 2025 Pouyez Tom
+      &copy; 2026 Pouyez Tom
       <a href="https://www.linkedin.com/in/tom-pouyez-etu" target="_blank" style="font-size: 1.5em; color: #0A66C2;">
         <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://github.com/TomPouyez" target="_blank" style="font-size: 1.5em; color: #969393;">
         <i class="fab fa-github"></i>
-    </a>
+      </a>
     </p>
   </footer>
+  
   <script>
     window.addEventListener("scroll", function () {
       const hero = document.querySelector('.hero');
       if (hero) {
         hero.style.backgroundPositionY = -(window.scrollY * 0.3) + 'px';
       }
+      
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress").style.width = scrolled + "%";
     });
   </script>
 </body>
